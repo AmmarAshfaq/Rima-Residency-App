@@ -1,6 +1,5 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import {
-    StyleSheet,
     View,
     FlatList,
     Image,
@@ -9,66 +8,63 @@ import {
 } from 'react-native'
 import {
     Text,
-    Item,
-    Input, ListItem,
-    Card,
-    CardItem,
-    Button, Icon, Left,
-    Body,
-    Right
+    Button,
+    DeckSwiper,
+    Card, CardItem
 
 } from 'native-base'
-
-const {width, height} = Dimensions.get("window");
+const result = [
+    {
+        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
+        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'newest'
+    },
+    {
+        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
+        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'newest'
+    },
+    {
+        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
+        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'newest'
+    },
+    {
+        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
+        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'topRated'
+    },
+    {
+        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
+        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'premium'
+    },
+    {
+        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
+        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'topRated'
+    },
+    {
+        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
+        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'newest'
+    },
+    {
+        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
+        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago',
+        filterValue: 'topRated',
+        description: 'Defence Phase VI 920 Square Feet office For Rent very prime location fully tiled flooring one hall one bathrooms for more details contact us. . . . . . . . . . . . . . . .'
+    },
+]
+const { width, height } = Dimensions.get("window");
 
 class Flat extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            selectValue: [
-                {
-                    url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-                    location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-                    bath: '-', bedroom: '-', added: '18 hours ago'
-                },
-                {
-                    url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-                    location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-                    bath: '-', bedroom: '-', added: '18 hours ago'
-                },
-                {
-                    url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-                    location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-                    bath: '-', bedroom: '-', added: '18 hours ago'
-                },
-                {
-                    url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-                    location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-                    bath: '-', bedroom: '-', added: '18 hours ago'
-                },
-                {
-                    url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-                    location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-                    bath: '-', bedroom: '-', added: '18 hours ago'
-                },
-                {
-                    url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-                    location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-                    bath: '-', bedroom: '-', added: '18 hours ago'
-                },
-                {
-                    url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-                    location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-                    bath: '-', bedroom: '-', added: '18 hours ago'
-                },
-                {
-                    url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-                    location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-                    bath: '-', bedroom: '-', added: '18 hours ago',
-                    description: 'Defence Phase VI 920 Square Feet office For Rent very prime location fully tiled flooring one hall one bathrooms for more details contact us. . . . . . . . . . . . . . . .'
-                },
-
-            ]
+            valueSelect: 'newest',
+            selectValue: result
         }
         this.changeState = this.changeState.bind(this)
     }
@@ -79,7 +75,7 @@ class Flat extends Component {
             backgroundColor: "#fff",
         },
         headerTintColor: '#05527c',
-        headerTitleStyle: {alignSelf: 'center', textAlign: "center", flex: 1, marginLeft: -10},
+        headerTitleStyle: { alignSelf: 'center', textAlign: "center", flex: 1, marginLeft: -10 },
 
 
     }
@@ -93,53 +89,133 @@ class Flat extends Component {
         })
 
     }
-
+    filterList = (filter) => {
+        // console.log(filter)
+        let filterList = result.filter((item) => item.filterValue === filter)
+        this.setState({
+            selectValue: filterList,
+            valueSelect: filter
+        })
+    }
     render() {
+        console.log(this.state.valueSelect, 'stattat')
         return (
-            <View style={{flex: 1, backgroundColor: '#eee'}}>
-                <Item style={{marginLeft: 10, marginRight: 10}}>
-                    <Icon active name='search' style={{color: '#05527c'}}/>
-                    <Input
-                        placeholder='Search'
-                        onChangeText={event => this.changeState(event)}
+            <View style={{ flex: 1, backgroundColor: '#eee' }}>
+                <View style={{ flex: 0.1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                    <TouchableOpacity style={{ flex: 0.3, }} onPress={() => this.filterList('newest')}>
+                        <Text style={{ textAlign: 'center', borderBottomWidth: 2, color: this.state.valueSelect === 'newest' ? '#05527c' : '#000', borderBottomColor: this.state.valueSelect === 'newest' ? '#05527c' : '#000' }}>Newest</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{ flex: 0.3, margin: width / 46 }} onPress={() => this.filterList('topRated')}>
+                        <Text style={{ textAlign: 'center', borderBottomWidth: 2, color: this.state.valueSelect === 'topRated' ? '#05527c' : '#000', borderBottomColor: this.state.valueSelect === 'topRated' ? '#05527c' : '#000' }}>Top Rated</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{ flex: 0.3 }} onPress={() => this.filterList('premium')}>
+                        <Text style={{ textAlign: 'center', borderBottomWidth: 2, color: this.state.valueSelect === 'premium' ? '#05527c' : '#000', borderBottomColor: this.state.valueSelect === 'premium' ? '#05527c' : '#000' }}>Premium</Text>
+                    </TouchableOpacity>
+
+                </View>
+                <View style={{ flex: 0.9 }}>
+                    <FlatList
+                        data={this.state.selectValue}
+
+                        renderItem={({ item }) => (
+                            <View>
+
+                                <TouchableOpacity style={{
+                                    flex: 1,
+                                    marginTop: width / 26,
+                                    marginBottom: width / 26,
+                                }}
+                                    onPress={() => this.props.navigation.navigate('detail')}>
+                                    <View style={{ flex: 0.4 }}>
+                                        <View
+                                            style={{
+                                                flexDirection: "row",
+                                                justifyContent: "center",
+                                                padding: 5
+                                            }}
+                                        >
+                                            <View
+                                                style={{
+                                                    width: width / 2,
+                                                    alignItems: "flex-start",
+                                                    paddingLeft: width / 36
+                                                }}
+                                            >
+                                                <Text style={{ color: "#000", fontSize: width / 32 }}>
+                                                    {item.location}
+                                                </Text>
+                                            </View>
+                                            <View
+                                                style={{
+                                                    width: width / 2,
+                                                    alignItems: "flex-end",
+                                                    paddingRight: width / 36
+                                                }}
+                                            >
+                                                <Text style={{ color: "#000", fontSize: width / 32 }}>
+                                                    Added {item.added}
+                                                </Text>
+                                            </View>
+                                        </View>
+                                        <Image source={{ uri: item.url }} style={{ width: width, height: height / 4 }}
+                                        />
+
+                                    </View>
+                                    <View
+                                        style={{
+                                            // flex: 0.1,
+                                            flexDirection: "row",
+                                            justifyContent: "center",
+                                            // marginTop: width / 16,
+                                            backgroundColor: "#05527c",
+                                            paddingTop: width / 36,
+                                            paddingBottom: width / 40
+                                        }}
+                                    >
+                                        <View
+                                            style={{
+                                                width: width / 2,
+                                                alignItems: "flex-start",
+                                                paddingLeft: width / 36
+                                            }}
+                                        >
+                                            <Text
+                                                style={{
+                                                    color: "#fff",
+                                                    fontSize: width / 22,
+                                                    fontWeight: "bold"
+                                                }}
+                                            >
+                                                RENTAL SQUARE
+                </Text>
+                                        </View>
+                                        <View
+                                            style={{
+                                                width: width / 2,
+                                                flexDirection: "row",
+                                                justifyContent: "flex-end",
+                                                paddingRight: width / 36
+                                            }}
+                                        >
+                                            <Text
+                                                style={{
+                                                    color: "#fff",
+                                                    fontSize: width / 20,
+                                                    height: height / 20
+                                                }}
+                                            >
+                                                PKR {item.price}
+                                            </Text>
+
+                                        </View>
+                                    </View>
+                                </TouchableOpacity>
+                            </View>
+
+                        )}
+                        keyExtractor={(item, index) => index.toString()}
                     />
-                </Item>
-                <FlatList
-                    data={this.state.selectValue}
-
-                    renderItem={({item}) => (
-                        <TouchableOpacity style={{
-                            flex: 1,
-                            flexDirection: 'row',
-                            marginTop: width / 26,
-                            marginBottom: width / 26,
-                        }}
-                                          onPress={() => this.props.navigation.navigate('detail')}>
-                            <View style={{flex: 0.4}}>
-                                <Image source={{uri: item.url}} style={{width: width, height: height / 4}}
-                                />
-
-                            </View>
-                            <View style={{
-                                flex: 0.6,
-                                backgroundColor: '#fff',
-                                paddingLeft: width / 28,
-                                paddingTop: width / 28
-                            }}>
-
-                                <Text style={{fontWeight: 'bold', fontSize: width / 20}}> PKR {item.price}</Text>
-                                <Text style={{fontSize: width / 24}}>{item.location}</Text>
-                                <Text style={{fontSize: width / 24}}>{item.area}</Text>
-
-                                <Text style={{color: 'gray', fontSize: width / 26}}> Added {item.added}</Text>
-                                <Button primary style={{marginBottom: width / 28}}><Text>Call</Text>
-                                </Button>
-                            </View>
-                        </TouchableOpacity>
-
-                    )}
-                    keyExtractor={(item, index) => index.toString()}
-                />
+                </View>
             </View>
         )
     }

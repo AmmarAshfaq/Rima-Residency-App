@@ -220,9 +220,9 @@ export default class Dashboard extends Component {
               }}
             >
               <Image
-                source={require("../../../assets/logoB.jpg")}
+                source={require("../../../assets/logoB.png")}
                 style={{
-                  width: width,
+                  width: width/2,
                   height,
                   marginTop: 20,
                   marginBottom: 20,
@@ -309,6 +309,7 @@ export default class Dashboard extends Component {
                   <Text style={{ color: "#f09291" }}>Contact</Text>
                 </TouchableOpacity>
               </View>
+             
             </View>
             <View style={{ flex: 0.1 }} />
           </View>

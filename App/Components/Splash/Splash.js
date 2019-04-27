@@ -61,8 +61,8 @@ export default class SplashScreen extends Component {
                 <StatusBar hidden />
 
                 <Image
-                    style={{ width: "100%", height: "100%", resizeMode: "contain" }}
-                    source={require('../../../assets/logoB.jpg')} />
+                    style={{ width: "60%", height: "100%", resizeMode: "contain" }}
+                    source={require('../../../assets/logoB.png')} />
             </View>
         )
     }
@@ -70,7 +70,9 @@ export default class SplashScreen extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        alignItems:'center',
+        justifyContent:'center'
     },
     welcome: {
         fontSize: 20,

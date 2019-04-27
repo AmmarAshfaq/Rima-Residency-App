@@ -23,8 +23,8 @@ export default class UserProfile extends Component {
                         <View style={{ flex: 0.1 }}>
 
                         </View>
-                        <View style={{ flex: 0.2, justifyContent: "center", alignItems: "center", width: width / 4 }} >
-                            <Image source={require("../../../assets/logoB.jpg")} style={{ width: width, height, marginTop: 20 }} />
+                        <View style={{ flex: 0.2, justifyContent: "center", alignItems: "center" }} >
+                            <Image source={require("../../../assets/logoB.png")} style={{ width: width/2, marginTop: 20 }} resizeMode='contain' />
                         </View>
                         <View style={{ flex: 0.5, paddingTop: width / 6, justifyContent: "center", alignItems: "center" }}>
                             <Thumbnail large source={require('../../../assets/profileImage.png')} />

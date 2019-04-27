@@ -4,16 +4,16 @@ export default class Account extends Component {
     static navigationOptions ={
         title:'Account Details',
         headerStyle:{
-            backgroundColor:"#353b48",
+            backgroundColor:"#fff",
         },
-        headerTintColor:'#fff',
+        headerTintColor:'#05527c',
         headerTitleStyle: { alignSelf: 'center' , textAlign:"center",flex:1,marginLeft:-10 },
         
 
     }
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: "#272727" }}>
+            <View style={{ flex: 1, backgroundColor: "#eee" }}>
 
             </View>
         )

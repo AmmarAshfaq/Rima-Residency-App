@@ -80,9 +80,9 @@ class SignUp extends Component {
           <View style={{ flex: 0.5, }}>
             <View style={{ flex: 0.7, justifyContent: 'center', alignItems: 'center' }}>
               <Image
-                source={require('../../../assets/logoB.jpg')}
-                style={{ width: width, height: height / 2 }}
-                resizeMode='stretch'
+                source={require('../../../assets/logoB.png')}
+                style={{ width: width/2, height: height / 2 }}
+                resizeMode='contain'
               />
             </View>
             <View style={{ flex: 0.2, justifyContent: 'center', alignItems: 'flex-start' }}>

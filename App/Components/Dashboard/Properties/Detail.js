@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Dimensions, ScrollView, Image, Text, View } from "react-native";
+import { Dimensions, ScrollView, Image, Text, View, Modal, TouchableOpacity } from "react-native";
 import { Card, CardItem, DeckSwiper, Left, Right, Button } from "native-base";
 
 const { height, width } = Dimensions.get("window");
@@ -7,6 +7,7 @@ export default class Detail extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      modalVisble: false,
       selectValue: {
         url: [
           {
@@ -54,6 +55,7 @@ export default class Detail extends Component {
   };
 
   render() {
+    console.log(this.state.modalVisble)
     return (
       <ScrollView
         contentContainerStyle={{
@@ -322,23 +324,7 @@ export default class Detail extends Component {
                 paddingTop: width / 10
               }}
             >
-              <View style={{ flexDirection: "row", paddingLeft: width / 10 }}>
-                <View>
-                  <Image
-                    source={require("../../../../assets/bathtub.png")}
-                    resizeMode="contain"
-                    style={{ width: width / 6, height: height / 20 }}
-                  />
-                </View>
-                <View>
-                  <Text style={{ color: "#15577a", fontSize: width / 30 }}>
-                    Agent
-                  </Text>
-                  <Text style={{ color: "#000", fontSize: width / 24 }}>
-                    JOHN DOE
-                  </Text>
-                </View>
-              </View>
+
               <View
                 style={{
                   flexDirection: "row",
@@ -346,6 +332,7 @@ export default class Detail extends Component {
                   paddingTop: width / 20,
                 }}
               >
+
                 <Button
                   rounded
                   style={{
@@ -356,25 +343,37 @@ export default class Detail extends Component {
                     // alignSelf:'center'
                     justifyContent: 'center',
                   }}
+                  onPress={() => this.setState({ modalVisble: true })}
                 >
-                  <Text style={{color:'#fff',fontWeight:'bold'}}>CALL</Text>
+                  <Text style={{ color: '#fff', fontWeight: 'bold' }}>
+                    Book Know
+                  </Text>
                 </Button>
-                <Button
-                  rounded
-                  style={{
-                    backgroundColor: "#05527c",
-                    width: width / 4,
-                    height: height / 20,
-                    marginLeft: width / 36,
-                    justifyContent: 'center',
-                  }}
-                >
-                  <Text style={{color:'#fff',fontWeight:'bold'}}>MESSAGE</Text>
-                </Button>
+
+
               </View>
             </View>
           </View>
         </View>
+        {/* <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {
+            Alert.alert("Modal has been closed.");
+          }}
+        >
+          <View style={{ flex: 1 }}>
+            <TouchableOpacity
+              onPress={() => {
+                this.setState({ modalVisble: !this.state.modalVisble})
+              }}
+              style={{ marginTop: width / 6 }}
+            >
+              <Text>Close</Text>
+            </TouchableOpacity>
+          </View>
+        </Modal> */}
       </ScrollView>
     );
   }

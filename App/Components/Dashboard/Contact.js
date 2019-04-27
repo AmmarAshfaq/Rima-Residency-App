@@ -38,12 +38,12 @@ export default class Contact extends Component {
             }}
           >
             <Image
-              source={require("../../../assets/logoB.jpg")}
+              source={require("../../../assets/logoB.png")}
               style={{
                 width: width / 2,
-                height: width,
+                // height: height/2,
                 marginTop: 20,
-                // resizeMode: "contain"
+                resizeMode: "contain"
                 // color:'rgba(208, 164, 135, 1)'
               }}
             />

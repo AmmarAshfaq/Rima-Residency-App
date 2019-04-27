@@ -77,9 +77,9 @@ class SignIn extends Component {
             }}
           >
             <Image
-              source={require("../../../assets/logoB.jpg")}
+              source={require("../../../assets/logoB.png")}
               style={{
-                width: width,
+                width: width/2,
                 height,
                 marginTop: 20,
                 resizeMode: "contain"

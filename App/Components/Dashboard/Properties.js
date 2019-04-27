@@ -56,12 +56,12 @@ export default class Properties extends Component {
 
               <View style={{ flex: 0.8 }}>
                 <Image
-                  source={require("../../../assets/logoB.jpg")}
+                  source={require("../../../assets/logoB.png")}
                   style={{
                     width: width/2 ,
                     height: width /2,
                     // opacity:0.5
-                    // resizeMode: "contain"
+                    resizeMode: "contain"
                   }}
                 />
               </View>

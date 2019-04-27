@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from "react";
-import { View, Alert ,AsyncStorage} from "react-native";
+import { View, Alert, AsyncStorage } from "react-native";
 import { Provider } from "react-redux";
 import { store } from "../Store/index";
 import { createStackNavigator } from "react-navigation";
@@ -27,6 +27,7 @@ import Shop from "./Dashboard/Properties/Shop";
 import Detail from "./Dashboard/Properties/Detail";
 import About from "./Dashboard/About";
 import firebase from 'react-native-firebase'
+import Booking from './Dashboard/Booking';
 export default class App extends Component<Props> {
   async  componentDidMount() {
     this.checkPermission();
@@ -124,10 +125,11 @@ const RootStack = createStackNavigator(
     office: Office,
     flat: Flat,
     detail: Detail,
-    about: About
+    about: About,
+    booking: Booking
   },
   {
-    initialRouteName: "splash"
+    initialRouteName: "dashBoard"
   }
 );
 const prevGetStateForActionRootStack = RootStack.router.getStateForAction;

@@ -53,13 +53,13 @@ export default class About extends Component {
           }}
         >
           <Image
-            source={require("../../../assets/logoB.jpg")}
+            source={require("../../../assets/logoB.png")}
             style={{
               width: width / 2,
               height: width / 2,
               // marginTop: 20,
               // marginBottom: 20,
-              // resizeMode: "contain"
+              resizeMode: "contain"
             }}
           />
 
