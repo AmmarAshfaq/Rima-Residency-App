@@ -273,7 +273,7 @@ export default class Dashboard extends Component {
                     style={{ width: 60, height: 60 }}
                   />
                   <Text style={{ color: "#f09291" }}>
-                    Account Detail{" "}
+                    Account
                   </Text>
                 </TouchableOpacity>
               </View>
