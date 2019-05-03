@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { View, Image, Text, Dimensions } from "react-native";
+import { View, Image, Text, Dimensions,ScrollView } from "react-native";
 const { width, height } = Dimensions.get("window");
 import { DeckSwiper, Card, CardItem, Button } from "native-base";
+import List from '../../Components/listOfImage'
 const selectValue = {
   url: [
     {
@@ -43,6 +44,15 @@ export default class About extends Component {
   };
   render() {
     return (
+      <ScrollView
+      contentContainerStyle={{
+        height: height,
+        width,
+        backgroundColor: "#eeeeee"
+      }}
+      keyboardDismissMode="interactive"
+      keyboardShouldPersistTaps="handled"
+    >
       <View style={{ flex: 1, backgroundColor: "#eeeeee" }}>
         <View
           style={{
@@ -67,7 +77,7 @@ export default class About extends Component {
         </View>
         <View style={{ flex: 0.3 }}>
           <DeckSwiper
-            dataSource={selectValue.url}
+            dataSource={List}
             // style={{}}
             renderItem={item => (
               <Card
@@ -79,7 +89,7 @@ export default class About extends Component {
               >
                 <CardItem cardBody>
                   <Image
-                    source={{ uri: item.image }}
+                    source={ item.image }
                     style={{ width: width, height: height / 4 }}
                   />
                 </CardItem>
@@ -103,12 +113,10 @@ export default class About extends Component {
           }}
         >
           <Text style={{ textAlign: "center", color: "#000", paddingLeft: width / 36, paddingRight: width / 36 }}>
-            Dominion Properties is one of the world's faster- {"\n"}
-            growing real-estate development firm.Admired for   {"\n"}
-            its ingenuity and ultra-modern take on real-estate, {"\n"}
-            Dominion Properties excelling in design,quality and  {"\n"}
-            safety seek to continue building advance real-estate  {'&'}
-            ranging from shopping malls retail and hospitality {'&'} leisure.
+            International business and pleasure, or your own personal staycation, Rima Residence has everything residents could ever need.
+  An ideal place for families, the development available within the community offer comfy facilities.
+  In addition to being within easy reach of Al Khobar city centre and the main roadway to Dammam Airport.
+  With recreational facilities, a health club and a Daycare centre, enjoy comfort any day of the week.
           </Text>
           <Button
             style={{
@@ -121,7 +129,7 @@ export default class About extends Component {
               backgroundColor: "#24516e",
               alignSelf: "center",
               // borderRadius: width / 12
-              marginTop:width/36
+              marginTop: width / 36
             }}
             onPress={this.signUp}
           >
@@ -130,6 +138,7 @@ export default class About extends Component {
         </View>
 
       </View>
+      </ScrollView>
     );
   }
 }

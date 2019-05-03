@@ -29,6 +29,11 @@ const drawerDataArray = [
     name: "About Us",
     icon: require("../../../assets/about-us.png"),
     route: ref => ref.props.navigation.navigate("about")
+  },
+  {
+    name: "Services",
+    icon: require("../../../assets/service.png"),
+    route: ref => ref.props.navigation.navigate("services")
   }
 
   // { name: "Payment Term",  icon: require("../../assets/images/term.png"),route:(ref)=>ref.props.navigation.navigate("paymentTerm")},
@@ -72,7 +77,7 @@ export default class Dashboard extends Component {
   }
   componentWillMount() {
     firebase.auth().onAuthStateChanged(async function (user) {
-      console.log(user,"current user")
+      console.log(user, "current user")
       // console.log(error)
 
       if (user) {
@@ -222,7 +227,7 @@ export default class Dashboard extends Component {
               <Image
                 source={require("../../../assets/logoB.png")}
                 style={{
-                  width: width/2,
+                  width: width / 2,
                   height,
                   marginTop: 20,
                   marginBottom: 20,
@@ -252,7 +257,7 @@ export default class Dashboard extends Component {
                 >
                   <Image
                     source={require("../../../assets/appartment.png")}
-                    style={{ width: 60, height: 60 }}
+                    style={{ width: 80, height: 80 }}
                   />
                   <Text style={{ color: "#f09291" }}>
                     Properties
@@ -270,7 +275,7 @@ export default class Dashboard extends Component {
                 >
                   <Image
                     source={require("../../../assets/account.png")}
-                    style={{ width: 60, height: 60 }}
+                    style={{ width: 80, height: 80 }}
                   />
                   <Text style={{ color: "#f09291" }}>
                     Account
@@ -288,7 +293,7 @@ export default class Dashboard extends Component {
                 >
                   <Image
                     source={require("../../../assets/utilities.png")}
-                    style={{ width: 60, height: 60 }}
+                    style={{ width: 80, height: 80 }}
                   />
                   <Text style={{ color: "#f09291" }}>
                     Utilities
@@ -304,12 +309,12 @@ export default class Dashboard extends Component {
                 >
                   <Image
                     source={require("../../../assets/contact.png")}
-                    style={{ width: 60, height: 60 }}
+                    style={{ width: 80, height: 80 }}
                   />
                   <Text style={{ color: "#f09291" }}>Contact</Text>
                 </TouchableOpacity>
               </View>
-             
+
             </View>
             <View style={{ flex: 0.1 }} />
           </View>

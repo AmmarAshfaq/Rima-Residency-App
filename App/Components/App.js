@@ -28,6 +28,8 @@ import Detail from "./Dashboard/Properties/Detail";
 import About from "./Dashboard/About";
 import firebase from 'react-native-firebase'
 import Booking from './Dashboard/Booking';
+import Payments from './Dashboard/Payment';
+import Services from './Dashboard/Services';
 export default class App extends Component<Props> {
   async  componentDidMount() {
     this.checkPermission();
@@ -126,10 +128,12 @@ const RootStack = createStackNavigator(
     flat: Flat,
     detail: Detail,
     about: About,
-    booking: Booking
+    booking: Booking,
+    payment:Payments,
+    services:Services
   },
   {
-    initialRouteName: "dashBoard"
+    initialRouteName: "splash"
   }
 );
 const prevGetStateForActionRootStack = RootStack.router.getStateForAction;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Dimensions, ScrollView, Image, Text, View, Modal, TouchableOpacity } from "react-native";
 import { Card, CardItem, DeckSwiper, Left, Right, Button } from "native-base";
-
+import List from '../../listOfImage'
 const { height, width } = Dimensions.get("window");
 export default class Detail extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ export default class Detail extends Component {
   }
 
   static navigationOptions = {
-    title: "RETAL SQUARE",
+    title: "RIMA RESIDENCE",
     headerStyle: {
       backgroundColor: "#fff"
     },
@@ -99,7 +99,7 @@ export default class Detail extends Component {
               </View>
             </View>
             <DeckSwiper
-              dataSource={this.state.selectValue.url}
+              dataSource={List}
               // style={{}}
               renderItem={item => (
                 <Card
@@ -111,7 +111,7 @@ export default class Detail extends Component {
                 >
                   <CardItem cardBody>
                     <Image
-                      source={{ uri: item.image }}
+                      source={item.image}
                       style={{ width: width, height: height / 4 }}
                     />
                   </CardItem>
@@ -145,7 +145,7 @@ export default class Detail extends Component {
                     fontWeight: "bold"
                   }}
                 >
-                  RENTAL SQUARE
+                  RIMA RESIDENCE
                 </Text>
               </View>
               <View
@@ -343,10 +343,10 @@ export default class Detail extends Component {
                     // alignSelf:'center'
                     justifyContent: 'center',
                   }}
-                  onPress={() => this.setState({ modalVisble: true })}
+                  onPress={() => this.props.navigation.navigate('payment')}
                 >
                   <Text style={{ color: '#fff', fontWeight: 'bold' }}>
-                    Book Know
+                    Book now
                   </Text>
                 </Button>
 

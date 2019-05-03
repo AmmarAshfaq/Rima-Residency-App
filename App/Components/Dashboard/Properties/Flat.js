@@ -70,7 +70,7 @@ class Flat extends Component {
     }
 
     static navigationOptions = {
-        title: 'FLAT',
+        title: 'PROPERTY LIST',
         headerStyle: {
             backgroundColor: "#fff",
         },
@@ -186,7 +186,7 @@ class Flat extends Component {
                                                     fontWeight: "bold"
                                                 }}
                                             >
-                                                RENTAL SQUARE
+                                              RIMA RESIDENCE
                 </Text>
                                         </View>
                                         <View

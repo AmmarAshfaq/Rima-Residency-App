@@ -3,6 +3,7 @@ import { View, ScrollView, Dimensions, Text } from 'react-native';
 const { width, height } = Dimensions.get("window");
 import { Card, CardItem, Body, Icon } from 'native-base';
 import EStyleSheet from 'react-native-extended-stylesheet';
+
 // const styles = EStyleSheet.create({
 //     column: {
 //         width: '80%'
@@ -46,9 +47,9 @@ export default class Account extends Component {
 
                     <Card style={{ flex: 0.4, }}>
 
-                        <CardItem header bordered style={{ flex: 0.1 }}>
-                            <Icon active name="paper" />
-                            <Text style={{ textAlign: 'center', fontSize: width / 20 }}>
+                        <CardItem header bordered style={{ flex: 0.1, backgroundColor: '#282828' }}>
+                            <Icon active name="paper" style={{ color: '#fff' }} />
+                            <Text style={{ textAlign: 'center', fontSize: width / 20, color: '#fff' }}>
                                 My Installment Plan
             </Text>
                         </CardItem>
@@ -74,20 +75,20 @@ export default class Account extends Component {
             </Text>
                             </Body>
                         </CardItem>
-                        <CardItem style={{ flex: 0.2 }} button onPress={() => alert("This is Card Body")}>
+                        <CardItem style={{ flex: 0.2, backgroundColor: '#d6d6d6' }} button onPress={() => this.props.navigation.navigate('payment')}>
 
-                            <Icon active name="cash" />
-                            <Text>
+                            <Icon active name="cash" style={{ color: '#282828' }} />
+                            <Text style={{ color: '#282828' }}>
                                 Pay now
-                </Text>
+</Text>
                         </CardItem>
 
                     </Card>
                     <Card style={{ flex: 0.6, }}>
 
-                        <CardItem header bordered style={{ flex: 0.1 }}>
-                            <Icon active name="cash" />
-                            <Text style={{ textAlign: 'center', fontSize: width / 20 }}>
+                        <CardItem header bordered style={{ flex: 0.1, backgroundColor: '#282828' }}>
+                            <Icon active name="cash" style={{ color: '#fff' }} />
+                            <Text style={{ textAlign: 'center', fontSize: width / 20, color: '#fff' }}>
                                 Previous ledger
             </Text>
                         </CardItem>

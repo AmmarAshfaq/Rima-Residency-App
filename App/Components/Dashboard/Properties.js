@@ -104,40 +104,7 @@ export default class Properties extends Component {
               backgroundColor: "#fff"
             }}
           >
-            <View style={{ flex: 1 / 2, flexDirection: "row" }}>
-              <TouchableOpacity
-                style={{
-                  width: width / 2,
-                  justifyContent: "center",
-                  alignItems: "center"
-                }}
-                onPress={() => {
-                  this.props.navigation.navigate("office");
-                }}
-              >
-                <Image
-                  source={require("../../../assets/office.png")}
-                  style={{ width: 60, height: 60 }}
-                />
-                <Text style={{ color: "#f09291" }}>Office</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{
-                  width: width / 2,
-                  justifyContent: "center",
-                  alignItems: "center"
-                }}
-                onPress={() => {
-                  this.props.navigation.navigate("shop");
-                }}
-              >
-                <Image
-                  source={require("../../../assets/store.png")}
-                  style={{ width: 60, height: 60 }}
-                />
-                <Text style={{ color: "#f09291" }}>Shop </Text>
-              </TouchableOpacity>
-            </View>
+            
             <View style={{ flex: 1 / 2, flexDirection: "row" }}>
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate("flat")}
@@ -149,12 +116,12 @@ export default class Properties extends Component {
               >
                 <Image
                   source={require("../../../assets/appartment.png")}
-                  style={{ width: 60, height: 60 }}
+                  style={{ width: 80, height:80 }}
                 />
                 <Text style={{ color: "#f09291" }}>Flat</Text>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate("house")}
+                onPress={() => this.props.navigation.navigate("flat")}
                 style={{
                   width: width / 2,
                   justifyContent: "center",
@@ -163,7 +130,7 @@ export default class Properties extends Component {
               >
                 <Image
                   source={require("../../../assets/mansion.png")}
-                  style={{ width: 60, height: 60 }}
+                  style={{ width: 80, height:80 }}
                 />
                 <Text style={{ color: "#f09291" }}>House</Text>
               </TouchableOpacity>
