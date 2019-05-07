@@ -32,9 +32,9 @@ export default class About extends Component {
   static navigationOptions = {
     title: "ABOUT US",
     headerStyle: {
-      backgroundColor: "#fff"
+      backgroundColor: "#8b6e4b"
     },
-    headerTintColor: "#28678d",
+    headerTintColor: "#fff",
     headerTitleStyle: {
       alignSelf: "center",
       textAlign: "center",

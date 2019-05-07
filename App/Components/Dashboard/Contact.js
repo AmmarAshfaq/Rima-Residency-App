@@ -8,9 +8,9 @@ export default class Contact extends Component {
   static navigationOptions = {
     title: "CONTACT US",
     headerStyle: {
-      backgroundColor: "#fff"
+      backgroundColor: "#8b6e4b"
     },
-    headerTintColor: "#28678d",
+    headerTintColor: "#fff",
     headerTitleStyle: {
       alignSelf: "center",
       textAlign: "center",

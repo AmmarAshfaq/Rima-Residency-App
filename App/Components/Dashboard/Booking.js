@@ -14,9 +14,9 @@ export default class Booking extends Component {
     static navigationOptions = {
         title: 'Booking',
         headerStyle: {
-            backgroundColor: "#fff",
+            backgroundColor: "#8b6e4b",
         },
-        headerTintColor: '#28678d',
+        headerTintColor: '#fff',
         headerTitleStyle: { alignSelf: 'center', textAlign: "center", flex: 1, marginLeft: -10, color: '#28678d' },
 
 

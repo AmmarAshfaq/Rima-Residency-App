@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Dimensions, ScrollView, Image, Text, View, Modal, TouchableOpacity } from "react-native";
 import { Card, CardItem, DeckSwiper, Left, Right, Button } from "native-base";
 import List from '../../listOfImage'
+// import Logo from 
 const { height, width } = Dimensions.get("window");
 export default class Detail extends Component {
   constructor(props) {
@@ -28,24 +29,31 @@ export default class Detail extends Component {
           { image: "http://midtwn.com/wp-content/uploads/2014/05/photo-1.jpg" }
         ],
         price: " 2 lACS",
-        location: "DHA Defence, Karachi, Sindh",
+        location: "P.O. Box 1266, Corniche Boulevard, 31952 Al Khobar, Saudi Arabia",
         purpose: "For Rent",
         area: "8.9 Marla",
         bath: "-",
         bedroom: "-",
         added: "18 hours ago",
         description:
-          "Defence Phase VI 920 Square Feet office For Rent very prime location fully tiled flooring one hall one b"
+          " International business and pleasure, or your own personal staycation, Rima Residence has everything residents could ever need.An ideal place for families, the development available within the community offer comfy facilities.In addition to being within easy reach of Al Khobar city centre and the main roadway to Dammam Airport With recreational facilities, a health club and a Daycare centre, enjoy comfort any day of the week."
       }
     };
   }
 
   static navigationOptions = {
-    title: "RIMA RESIDENCE",
+    headerTitle: (
+
+      <Image
+        source={require("../../../../assets/logoB.png")}
+        resizeMode="contain"
+        style={{ width: width / 2, marginLeft: 8, marginRight: -6,height:height/16 }}
+      />
+    ),
     headerStyle: {
-      backgroundColor: "#fff"
+      backgroundColor: "#8b6e4bc2"
     },
-    headerTintColor: "#05527c",
+    headerTintColor: "#fff",
     headerTitleStyle: {
       alignSelf: "center",
       textAlign: "center",
@@ -163,7 +171,7 @@ export default class Detail extends Component {
                     height: height / 20
                   }}
                 >
-                  PKR
+                  SAR
                 </Text>
                 <Text
                   style={{
@@ -299,12 +307,7 @@ export default class Detail extends Component {
                 About Project
               </Text>
               <Text style={{ color: "#000", fontSize: width / 36 }}>
-                Lorem ipsum dolor sit amet, ei vix prima affert lobortis, et
-                eius debet per. Modo laudem gloriatur quo ut. No oblique
-                epicurei sea, vis movet laboramus sadipscing ad, quo at alia
-                ferri. Graeci numquam eum ad, ei duo zril docendi forensibus,
-                pro vivendo voluptua torquatos ad. Quot erat nec no, placerat
-                perpetua no has, graece viderer inciderint ei sed.
+                International business and pleasure, or your own personal staycation, Rima Residence has everything residents could ever need.An ideal place for families, the development available within the community offer comfy facilities.In addition to being within easy reach of Al Khobar city centre and the main roadway to Dammam Airport With recreational facilities, a health club and a Daycare centre, enjoy comfort any day of the week.
               </Text>
               <Text
                 style={{
@@ -314,7 +317,7 @@ export default class Detail extends Component {
                   padding: 5
                 }}
               >
-                Retal Square,DHA Phase 6,Karachi Pakistan
+                King Faisal Road King Faisal Road, Al Bandariyah, Al Khobar 34422 3380, Saudi Arabia
               </Text>
             </View>
             <View

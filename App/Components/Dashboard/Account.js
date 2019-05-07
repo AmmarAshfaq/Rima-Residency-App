@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Dimensions, Text } from 'react-native';
+import { View, ScrollView, Dimensions, Text ,Image} from 'react-native';
 const { width, height } = Dimensions.get("window");
 import { Card, CardItem, Body, Icon } from 'native-base';
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -23,9 +23,9 @@ export default class Account extends Component {
     static navigationOptions = {
         title: 'Account Details',
         headerStyle: {
-            backgroundColor: "#fff",
+            backgroundColor: "#8b6e4b",
         },
-        headerTintColor: '#05527c',
+        headerTintColor: '#fff',
         headerTitleStyle: { alignSelf: 'center', textAlign: "center", flex: 1, marginLeft: -10 },
 
 
@@ -76,9 +76,18 @@ export default class Account extends Component {
                             </Body>
                         </CardItem>
                         <CardItem style={{ flex: 0.2, backgroundColor: '#d6d6d6' }} button onPress={() => this.props.navigation.navigate('payment')}>
-
-                            <Icon active name="cash" style={{ color: '#282828' }} />
-                            <Text style={{ color: '#282828' }}>
+                            <Image
+                                source={require("../../../assets/riyal.png")}
+                                style={{
+                                    width: width / 12,
+                                    height,
+                                    // marginTop: 20,
+                                    resizeMode: "contain"
+                                    // color:'rgba(208, 164, 135, 1)'
+                                }}
+                            />
+                            {/* <Icon active name="cash" style={{ color: '#282828' }} /> */}
+                            <Text style={{ color: '#282828',marginLeft:5 }}>
                                 Pay now
 </Text>
                         </CardItem>

@@ -15,45 +15,46 @@ import {
 } from 'native-base'
 const result = [
     {
-        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'newest'
+        url: 'https://t-ec.bstatic.com/images/hotel/max1024x768/341/34182139.jpg', price: ' 2 lacs',
+        location: 'Condo Hotel  City Suites', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'newest',name:'Le Meridien Al Khobar'
     },
     {
-        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'newest'
+        url: 'https://s-ec.bstatic.com/images/hotel/max1024x768/745/74519478.jpg', price: ' 2 lacs',
+        location: 'Kempinski Al Othman Hotel Al Khobar', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'newest',name:'Le Meridien Al Khobar'
     },
     {
-        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'newest'
+        url: 'https://t-ec.bstatic.com/images/hotel/max1024x768/178/178821314.jpg', price: ' 2 lacs',
+        location: 'Aloft Dhahran Hotel', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'newest',name:'Le Meridien Al Khobar'
     },
     {
-        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'topRated'
+        url: 'https://s-ec.bstatic.com/images/hotel/max1024x768/111/111434530.jpg', price: ' 2 lacs',
+        location: 'Ramada Encore Al Khobar Olaya', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'topRated',name:'Le Meridien Al Khobar'
     },
     {
-        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'premium'
+        url: 'https://s-ec.bstatic.com/images/hotel/max1024x768/178/178775197.jpg', price: ' 2 lacs',
+        location: ' P.O. Box 1266, Corniche Boulevard, 31952 Al Khobar, Saudi Arabia ', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'premium',name:'Le Meridien Al Khobar'
     },
     {
-        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'topRated'
+        url: 'https://t-ec.bstatic.com/images/hotel/max1024x768/181/181982271.jpg', price: ' 2 lacs',
+        location: ' Prince Musaed Bin Abdulaziz St. Cornich Al Khobar , 31952 Al Khobar, Saudi Arabia ', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'topRated',name:'Warwick Al Khobar'
     },
     {
-        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
-        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'newest'
+        url: 'https://t-ec.bstatic.com/images/hotel/max1024x768/102/102478997.jpg', price: ' 2 lacs',
+        location: 'Al Olayya District , Al Olayya, 31952 Al Khobar, Saudi Arabia', purpose: 'For Rent', area: '8.9 Marla',
+        bath: '-', bedroom: '-', added: '18 hours ago', filterValue: 'newest',name:'Blue Sands Palace'
     },
     {
-        url: 'https://media.zameen.com/thumbnails/46459116-800x600.webp', price: ' 2 lacs',
-        location: 'DHA Defence, Karachi, Sindh', purpose: 'For Rent', area: '8.9 Marla',
+        url: 'https://t-ec.bstatic.com/images/hotel/max1024x768/194/194614635.jpg', price: ' 2 lacs',
+        location: 'Ruqaa Street, Al Hamra District, 34628 Al Khobar, Saudi Arabia', purpose: 'For Rent', area: '8.9 Marla',
         bath: '-', bedroom: '-', added: '18 hours ago',
         filterValue: 'topRated',
+        name:'Lake Inn',
         description: 'Defence Phase VI 920 Square Feet office For Rent very prime location fully tiled flooring one hall one bathrooms for more details contact us. . . . . . . . . . . . . . . .'
     },
 ]
@@ -72,9 +73,9 @@ class Flat extends Component {
     static navigationOptions = {
         title: 'PROPERTY LIST',
         headerStyle: {
-            backgroundColor: "#fff",
+            backgroundColor: "#8b6e4b",
         },
-        headerTintColor: '#05527c',
+        headerTintColor: '#fff',
         headerTitleStyle: { alignSelf: 'center', textAlign: "center", flex: 1, marginLeft: -10 },
 
 
@@ -186,7 +187,7 @@ class Flat extends Component {
                                                     fontWeight: "bold"
                                                 }}
                                             >
-                                              RIMA RESIDENCE
+                                              {/* RIMA RESIDENCE */}{item.name}
                 </Text>
                                         </View>
                                         <View
@@ -204,7 +205,7 @@ class Flat extends Component {
                                                     height: height / 20
                                                 }}
                                             >
-                                                PKR {item.price}
+                                                SAR {item.price}
                                             </Text>
 
                                         </View>

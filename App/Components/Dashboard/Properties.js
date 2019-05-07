@@ -20,11 +20,11 @@ export default class Properties extends Component {
   static navigationOptions = {
     title: "PROPERTIES",
     headerStyle: {
-      backgroundColor: "#fff"
+      backgroundColor: "#8b6e4b"
     },
-    headerTintColor: "#03517b",
+    headerTintColor: "#fff",
     headerTitleStyle: {
-      color: "#03517b",
+      color: "#fff",
       alignSelf: "center",
       textAlign: "center",
       flex: 1,

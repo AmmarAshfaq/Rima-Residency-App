@@ -30,11 +30,11 @@ const drawerDataArray = [
     icon: require("../../../assets/about-us.png"),
     route: ref => ref.props.navigation.navigate("about")
   },
-  {
-    name: "Services",
-    icon: require("../../../assets/service.png"),
-    route: ref => ref.props.navigation.navigate("services")
-  }
+  // {
+  //   name: "Services",
+  //   icon: require("../../../assets/service.png"),
+  //   route: ref => ref.props.navigation.navigate("services")
+  // }
 
   // { name: "Payment Term",  icon: require("../../assets/images/term.png"),route:(ref)=>ref.props.navigation.navigate("paymentTerm")},
 ];
@@ -50,19 +50,19 @@ export default class Dashboard extends Component {
           <Ionicons
             name="md-menu"
             size={width / 10}
-            color="#28678d"
+            color="#fff"
             style={{ marginLeft: 10 }}
           />
         </TouchableOpacity>
       ),
       headerTitleStyle: {
-        color: "#28678d",
+        color: "#fff",
         alignSelf: "center",
         textAlign: "center",
         flex: 1,
         marginLeft: -10
       },
-      headerStyle: { backgroundColor: "#fff" }
+      headerStyle: { backgroundColor: "#8b6e4b" }
     };
     headerRight: <View />;
   };
@@ -212,14 +212,14 @@ export default class Dashboard extends Component {
       >
         <ScrollView
           style={{ backgroundColor: "#eeeeee" }}
-          contentContainerStyle={{ height: height - 80, width }}
+          contentContainerStyle={{ height: height-80, width }}
           keyboardDismissMode="interactive"
           keyboardShouldPersistTaps="handled"
         >
           <View style={{ flex: 1, backgroundColor: "#eeeeee" }}>
             <View
               style={{
-                flex: 0.4,
+                flex: 0.3,
                 justifyContent: "center",
                 alignItems: "center"
               }}
@@ -257,7 +257,7 @@ export default class Dashboard extends Component {
                 >
                   <Image
                     source={require("../../../assets/appartment.png")}
-                    style={{ width: 80, height: 80 }}
+                    style={{ width: 70, height: 70 }}
                   />
                   <Text style={{ color: "#f09291" }}>
                     Properties
@@ -275,10 +275,10 @@ export default class Dashboard extends Component {
                 >
                   <Image
                     source={require("../../../assets/account.png")}
-                    style={{ width: 80, height: 80 }}
+                    style={{ width: 70, height: 70 }}
                   />
                   <Text style={{ color: "#f09291" }}>
-                    Account
+                    Bills
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -293,7 +293,7 @@ export default class Dashboard extends Component {
                 >
                   <Image
                     source={require("../../../assets/utilities.png")}
-                    style={{ width: 80, height: 80 }}
+                    style={{ width: 70, height: 70 }}
                   />
                   <Text style={{ color: "#f09291" }}>
                     Utilities
@@ -309,14 +309,44 @@ export default class Dashboard extends Component {
                 >
                   <Image
                     source={require("../../../assets/contact.png")}
-                    style={{ width: 80, height: 80 }}
+                    style={{ width: 70, height: 70  }}
                   />
                   <Text style={{ color: "#f09291" }}>Contact</Text>
                 </TouchableOpacity>
               </View>
+              {/* <View style={{ flex: 1 / 2,  }}>
+                
+               
+              </View> */}
 
             </View>
-            <View style={{ flex: 0.1 }} />
+            <View style={{ flex: 0.2, flexDirection: 'column' }}>
+              <View style={{ flex: 0.5 }} >
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate("services")}
+                  style={{
+                    width: width,
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }}
+                >
+                  <Image
+                    source={require("../../../assets/service.png")}
+                    style={{ width: 70, height: 70  }}
+                  />
+                  <Text style={{ color: "#f09291" }}>
+                    Domestic Services
+                  </Text>
+                </TouchableOpacity>
+
+              </View>
+              <View style={{ flex: 0.5, }}>
+                <Text style={{textAlign:'center',paddingTop:width/10,paddingBottom:width/10,fontWeight:'bold'}}>
+                  24/7 helpline number, 0900-920022222
+              </Text>
+              </View>
+            </View>
+
           </View>
         </ScrollView>
       </Drawer>

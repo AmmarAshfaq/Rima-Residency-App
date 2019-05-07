@@ -11,7 +11,7 @@ import {
     ToastAndroid,
     AsyncStorage
 } from "react-native";
-import { Input, Button, Spinner, Textarea, DatePicker } from "native-base";
+import { Input, Button, Spinner, Textarea, DatePicker, Picker, Item,Icon } from "native-base";
 const { width, height, scale, fontScale } = Dimensions.get("window");
 import Entypo from "react-native-vector-icons/Entypo";
 import { connect } from 'react-redux';
@@ -25,16 +25,17 @@ class Services extends Component {
             email: "",
             password: "",
             loading: false,
-            chosenDate: new Date()
+            chosenDate: new Date(),
+            serviceRequired:''
         };
     }
     static navigationOptions = {
         title: 'Service',
         headerStyle: {
-            backgroundColor: "#fff",
+            backgroundColor: "#8b6e4b",
         },
-        headerTintColor: '#28678d',
-        headerTitleStyle: { alignSelf: 'center', textAlign: "center", flex: 1, marginLeft: -10, color: '#28678d' },
+        headerTintColor: '#fff',
+        headerTitleStyle: { alignSelf: 'center', textAlign: "center", flex: 1, marginLeft: -10, color: '#fff' },
 
 
     }
@@ -138,14 +139,32 @@ class Services extends Component {
                             }}
                         >
                             <MaterialCommunityIcons name="email" size={25} color="#24516e" />
-                            <Input
+                            {/* <Input
                                 placeholderTextColor={"#24516e"}
                                 placeholder={"Service Required"}
                                 placeholder="Service Required"
                                 style={{ color: "#24516e" }}
                                 keyboardType={"email-address"}
                                 onChangeText={email => this.setState({ email })}
-                            />
+                            /> */}
+                            <Item picker style={{ borderColor: "transparent" }}>
+                                <Picker
+                                    mode="dropdown"
+                                    iosIcon={<Icon name="md-arrow-down" />}
+                                    style={{ width: width / 2 }}
+                                    selectedValue={
+                                        this.state.country}
+                                    onValueChange={
+                                        event => this.setState({ country: event })
+                                        // this.onInputChange(event, "country")
+                                    }
+                                >
+                                    <Picker.Item label="Plumber" value="Plumber" />
+                                    <Picker.Item label="Electrician" value="Electrician" />
+                                    <Picker.Item label="House Cleaner" value="House Cleaner" />
+                                    <Picker.Item label="Carpenter" value="Carpenter" />
+                                </Picker>
+                            </Item>
                         </View>
                         <View
                             style={{
