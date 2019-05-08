@@ -11,22 +11,26 @@ import {
     ToastAndroid,
     AsyncStorage
 } from "react-native";
-import { Input, Button, Spinner, Textarea, DatePicker, Picker, Item,Icon } from "native-base";
+import { Input, Button, Spinner, Textarea, DatePicker, Picker, Item, Icon } from "native-base";
 const { width, height, scale, fontScale } = Dimensions.get("window");
 import Entypo from "react-native-vector-icons/Entypo";
 import { connect } from 'react-redux';
-import { signinFunc } from '../../Store/Actions/AuthAction'
+import { serviceAction } from '../../Store/Actions/AppAction'
 import validator from "validator";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 class Services extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
-            password: "",
+
             loading: false,
             chosenDate: new Date(),
-            serviceRequired:''
+            serviceRequired: '',
+            houseNo: '',
+            address: '',
+            pNumber: '',
+            description: '',
+            timeSlot: ''
         };
     }
     static navigationOptions = {
@@ -46,7 +50,39 @@ class Services extends Component {
             routeName: `${route}`
         });
     };
-    submit = () => {
+    submit = async () => {
+        const { chosenDate, serviceRequired, houseNo, address, pNumber, description, timeSlot } = this.state;
+
+        console.log(this.state)
+        if (serviceRequired === '') {
+            ToastAndroid.show('Please Select Your Service', ToastAndroid.SHORT);
+            return
+        } else if (houseNo === '') {
+            ToastAndroid.show('Please Enter Your House No', ToastAndroid.SHORT);
+            return
+
+        }
+        else if (address === '') {
+
+            ToastAndroid.show('Please Enter Your Address', ToastAndroid.SHORT);
+            return
+
+        }
+        else if (pNumber === '') {
+            ToastAndroid.show('Please Enter Your PhoneNumber', ToastAndroid.SHORT);
+            return
+
+        }
+        else if (description === '') {
+            ToastAndroid.show('Please Enter Your Description', ToastAndroid.SHORT);
+            return
+
+        }
+        let user = await AsyncStorage.getItem('User');
+        console.log(user, 'xxx')
+        let serviceDetail = { chosenDate, serviceRequired, houseNo, address, pNumber, description, timeSlot, user }
+        // console.log(serviceDetail)
+        this.props.serviceComponent(serviceDetail);
         ToastAndroid.show('Thank You', ToastAndroid.SHORT);
         this.props.navigation.navigate('dashBoard')
     };
@@ -104,7 +140,7 @@ class Services extends Component {
                                 placeholder={"House No"}
                                 placeholder="House No"
                                 style={{ color: "#24516e" }}
-                                onChangeText={email => this.setState({ email })}
+                                onChangeText={houseNo => this.setState({ houseNo })}
                             />
                         </View>
                         <View
@@ -124,7 +160,7 @@ class Services extends Component {
                                 placeholder={"Address"}
                                 placeholder="Address"
                                 style={{ color: "#24516e" }}
-                                onChangeText={email => this.setState({ email })}
+                                onChangeText={address => this.setState({ address })}
                             />
                         </View>
                         <View
@@ -138,31 +174,59 @@ class Services extends Component {
                                 height: width / 18
                             }}
                         >
-                            <MaterialCommunityIcons name="email" size={25} color="#24516e" />
-                            {/* <Input
-                                placeholderTextColor={"#24516e"}
-                                placeholder={"Service Required"}
-                                placeholder="Service Required"
-                                style={{ color: "#24516e" }}
-                                keyboardType={"email-address"}
-                                onChangeText={email => this.setState({ email })}
-                            /> */}
+                            <MaterialCommunityIcons name="face-agent" size={25} color="#24516e" />
+
                             <Item picker style={{ borderColor: "transparent" }}>
                                 <Picker
                                     mode="dropdown"
                                     iosIcon={<Icon name="md-arrow-down" />}
                                     style={{ width: width / 2 }}
                                     selectedValue={
-                                        this.state.country}
+                                        this.state.serviceRequired}
                                     onValueChange={
-                                        event => this.setState({ country: event })
-                                        // this.onInputChange(event, "country")
+                                        event => this.setState({ serviceRequired: event })
                                     }
                                 >
+                                    <Picker.Item label="Please Select" value="" />
                                     <Picker.Item label="Plumber" value="Plumber" />
                                     <Picker.Item label="Electrician" value="Electrician" />
                                     <Picker.Item label="House Cleaner" value="House Cleaner" />
                                     <Picker.Item label="Carpenter" value="Carpenter" />
+                                </Picker>
+                            </Item>
+                        </View>
+                        <View
+                            style={{
+                                flex: 0.1,
+                                flexDirection: "row",
+                                alignItems: "center",
+                                borderColor: "#fff",
+                                borderWidth: 1,
+                                backgroundColor: "#fff",
+                                height: width / 18
+                            }}
+                        >
+                            <MaterialCommunityIcons name="clock-outline" size={25} color="#24516e" />
+
+                            <Item picker style={{ borderColor: "transparent" }}>
+                                <Picker
+                                    mode="dropdown"
+                                    iosIcon={<Icon name="md-arrow-down" />}
+                                    style={{ width: width / 2 }}
+                                    selectedValue={
+                                        this.state.timeSlot}
+                                    onValueChange={
+                                        event => this.setState({ timeSlot: event })
+                                        // this.onInputChange(event, "country")
+                                    }
+                                >
+                                    <Picker.Item label="Please Select Time" value="" />
+                                    <Picker.Item label="10:00 am to 12:00 pm" value="10:00 am to 12:00 pm" />
+                                    <Picker.Item label="12:30 pm to 2:30 pm" value="12:30 pm to 2:30 pm" />
+                                    <Picker.Item label="3:00 pm to 5:00 pm" value="3:00 pm to 5:00 pm" />
+                                    <Picker.Item label="5:30 pm to 7:30 pm" value="5:30 pm to 7:30 pm" />
+                                    <Picker.Item label="8:00 pm to 10:00 pm" value="8:00 pm to 10:00 pm" />
+
                                 </Picker>
                             </Item>
                         </View>
@@ -210,11 +274,11 @@ class Services extends Component {
                                 placeholder={"Phone Number"}
                                 placeholder="Phone Number"
                                 style={{ color: "#24516e" }}
-                                onChangeText={password => this.setState({ password })}
+                                onChangeText={pNumber => this.setState({ pNumber })}
                             />
                         </View>
 
-                        <Textarea rowSpan={5} bordered placeholder="Your Message" style={{ margin: width / 36, color: "#24516e", width: '95%', backgroundColor: "#fff" }} />
+                        <Textarea rowSpan={5} value={this.state.description} onChangeText={description => this.setState({ description })} bordered placeholder="Your Message" style={{ margin: width / 36, color: "#24516e", width: '95%', backgroundColor: "#fff" }} />
                         <View
                             style={{
                                 flex: 0.1,
@@ -258,7 +322,9 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
     return {
-
+        serviceComponent: data => {
+            dispatch(serviceAction(data))
+        }
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Services)

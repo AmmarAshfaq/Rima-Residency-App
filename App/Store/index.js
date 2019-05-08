@@ -4,7 +4,7 @@ import thunkMiddleware from 'redux-thunk';
 import { createLogger } from "redux-logger/src";
 
 import authReducer from './Reducer/AuthReducer';
-
+import appReducer from './Reducer/AppReducer';
 
 // import AuthEpic from './Epics/Auth';
 
@@ -12,7 +12,8 @@ import authReducer from './Reducer/AuthReducer';
 const loggerMiddleware = createLogger();
 
 const rootReducer = combineReducers({
-    authReducer
+    authReducer,
+    appReducer
 });
 //
 //

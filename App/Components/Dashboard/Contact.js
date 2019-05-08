@@ -1,10 +1,23 @@
 import React, { Component } from "react";
-import { View, ScrollView, Dimensions, Image, Text } from "react-native";
+import { View, ScrollView, Dimensions, Image, Text, ToastAndroid, AsyncStorage } from "react-native";
 const { width, height } = Dimensions.get("window");
 import { Input, Textarea, Button, Form } from "native-base";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { connect } from 'react-redux';
+import { contactAction } from '../../Store/Actions/AppAction';
+class Contact extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: '',
+      email: '',
+      contactNo: '',
+      subject: '',
+      description: ''
 
-export default class Contact extends Component {
+
+    }
+  }
   static navigationOptions = {
     title: "CONTACT US",
     headerStyle: {
@@ -18,6 +31,48 @@ export default class Contact extends Component {
       marginLeft: -10
     }
   };
+
+  submit = async () => {
+    const { name, email, contactNo, subject, description } = this.state;
+    if (name === '') {
+      ToastAndroid.show('Please Enter Your Name', ToastAndroid.SHORT);
+      return
+    } else if (email === '') {
+      ToastAndroid.show('Please Enter Your Email Address', ToastAndroid.SHORT);
+      return
+
+    }
+    else if (contactNo === '') {
+
+      ToastAndroid.show('Please Enter Your Contact No', ToastAndroid.SHORT);
+      return
+
+    }
+    else if (subject === '') {
+      ToastAndroid.show('Please Enter Your Subject', ToastAndroid.SHORT);
+      return
+
+    }
+    else if (description === '') {
+      ToastAndroid.show('Please Enter Your Description', ToastAndroid.SHORT);
+      return
+
+    }
+    let user = await AsyncStorage.getItem('User');
+    console.log(user, 'xxx')
+    let contactProperties = {
+      name,
+      email,
+      contactNo,
+      subject,
+      description,
+      user
+    }
+    this.props.contactComponent(contactProperties);
+    ToastAndroid.show('Thank You', ToastAndroid.SHORT);
+    this.props.navigation.navigate('dashBoard')
+  }
+
   render() {
     return (
       <ScrollView
@@ -124,7 +179,7 @@ export default class Contact extends Component {
                 placeholder={"Contact No"}
                 placeholder="Contact No"
                 style={{ color: "#24516e" }}
-                onChangeText={password => this.setState({ password })}
+                onChangeText={contactNo => this.setState({ contactNo })}
               />
             </View>
             <View
@@ -147,12 +202,12 @@ export default class Contact extends Component {
                 placeholder="Subject"
                 style={{ color: "#24516e" }}
                 // secureTextEntry
-                onChangeText={confirmPassword => this.setState({ confirmPassword })}
+                onChangeText={subject => this.setState({ subject })}
               />
             </View>
             {/* <View style={{marginRight:5}}> */}
 
-            <Textarea rowSpan={5} bordered placeholder="Your Message" style={{ margin: width / 36, color: "#24516e", width: width, backgroundColor: "#fff" }} />
+            <Textarea rowSpan={5} value={this.state.description} bordered placeholder="Your Message" onChangeText={description => this.setState({ description })} style={{ margin: width / 36, color: "#24516e", width: width, backgroundColor: "#fff" }} />
 
             {/* </View> */}
 
@@ -177,7 +232,7 @@ export default class Contact extends Component {
                   alignSelf: "center",
                   // borderRadius: width / 12
                 }}
-                onPress={this.signUp}
+                onPress={this.submit}
               >
                 <Text style={{ color: "#fff" }}>SEND MESSAGE</Text>
               </Button>
@@ -191,3 +246,14 @@ export default class Contact extends Component {
     );
   }
 }
+function mapStateToProps(state) {
+  return {
+
+  }
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    contactComponent: obj => dispatch(contactAction(obj))
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Contact);
