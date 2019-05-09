@@ -6,7 +6,7 @@ import Entypo from "react-native-vector-icons/Entypo";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 export default class UserProfile extends Component {
     static navigationOptions = {
-        title: 'Make Your Profile',
+        title: 'Update Your Profile',
         headerStyle: {
             backgroundColor: "#8b6e4b",
         },

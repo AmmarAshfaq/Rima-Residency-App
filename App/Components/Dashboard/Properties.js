@@ -41,8 +41,10 @@ export default class Properties extends Component {
         keyboardShouldPersistTaps="handled"
       >
         <View style={{ flex: 1, }}>
-          <View style={{ flex: 0.4,backgroundColor: "#eeeeee", justifyContent: "center",
-                alignItems: "center", }}>
+          <View style={{
+            flex: 0.4, backgroundColor: "#eeeeee", justifyContent: "center",
+            alignItems: "center",
+          }}>
             {/* <ImageBackground
               source={require("../../../assets/Header.png")}
               style={{
@@ -54,47 +56,47 @@ export default class Properties extends Component {
               }}
             > */}
 
-              <View style={{ flex: 0.8 }}>
-                <Image
-                  source={require("../../../assets/logoB.png")}
-                  style={{
-                    width: width/2 ,
-                    height: width /2,
-                    // opacity:0.5
-                    resizeMode: "contain"
-                  }}
-                />
-              </View>
-              <View
+            <View style={{ flex: 0.8 }}>
+              <Image
+                source={require("../../../assets/logoB.png")}
                 style={{
-                  flex: 0.2,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  marginBottom: 20
+                  width: width / 2,
+                  height: width / 2,
+                  // opacity:0.5
+                  resizeMode: "contain"
+                }}
+              />
+            </View>
+            <View
+              style={{
+                flex: 0.2,
+                justifyContent: "center",
+                alignItems: "center",
+                marginBottom: 20
+              }}
+            >
+              <Text
+                style={{
+                  color: "#03517b",
+                  fontSize: width / 20,
+                  fontWeight: "bold"
                 }}
               >
-                <Text
-                  style={{
-                    color: "#03517b",
-                    fontSize: width / 20,
-                    fontWeight: "bold"
-                  }}
-                >
-                  PROPERTIES
+                PROPERTIES
                 </Text>
-                <Text
-                  style={{
-                    color: "#03517b",
-                    fontSize: width / 36,
-                    fontWeight: "bold"
-                  }}
-                >
-            Explore properties via clicking the icons below
+              <Text
+                style={{
+                  color: "#03517b",
+                  fontSize: width / 36,
+                  fontWeight: "bold"
+                }}
+              >
+                Explore properties via clicking the icons below
                 </Text>
-              </View>
-            
+            </View>
 
-              {/* <Thumbnail large source={{ uri: this.props.user.image_url }} /> */}
+
+            {/* <Thumbnail large source={{ uri: this.props.user.image_url }} /> */}
             {/* </ImageBackground> */}
           </View>
           <View
@@ -104,39 +106,124 @@ export default class Properties extends Component {
               backgroundColor: "#fff"
             }}
           >
-            
-            <View style={{ flex: 1 / 2, flexDirection: "row" }}>
+
+            <View style={{ flex: 0.3, flexDirection: "row" }}>
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate("flat")}
                 style={{
                   width: width / 2,
                   justifyContent: "center",
-                  alignItems: "center"
+                  alignItems: "center",
+                  flexDirection: 'row'
                 }}
               >
+
                 <Image
-                  source={require("../../../assets/appartment.png")}
-                  style={{ width: 80, height:80 }}
+                  source={require("../../../assets/bed.png")}
+                  style={{ width: 60, height: 60 }}
                 />
-                <Text style={{ color: "#f09291" }}>Flat</Text>
+                <View
+                  style={{ marginLeft: width / 36, alignItems: "flex-end" }}
+                >
+                  <Text style={{ color: "#f09291" }}>Bed</Text>
+                  <Text style={{ color: "#f09291" }}>01</Text>
+                </View>
+                {/* <Text style={{ color: "#f09291" }}></Text> */}
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate("flat")}
                 style={{
                   width: width / 2,
                   justifyContent: "center",
-                  alignItems: "center"
+                  alignItems: "center",
+                  flexDirection: 'row'
                 }}
               >
+
                 <Image
-                  source={require("../../../assets/mansion.png")}
-                  style={{ width: 80, height:80 }}
+                  source={require("../../../assets/bed.png")}
+                  style={{ width: 60, height: 60 }}
                 />
-                <Text style={{ color: "#f09291" }}>House</Text>
+                <View
+                  style={{ marginLeft: width / 36, alignItems: "flex-end" }}
+                >
+                  <Text style={{ color: "#f09291" }}>Beds</Text>
+                  <Text style={{ color: "#f09291" }}>02</Text>
+                </View>
+                {/* <Text style={{ color: "#f09291" }}></Text> */}
+              </TouchableOpacity>
+            </View>
+            <View style={{ flex: 0.3, flexDirection: "row" }}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate("flat")}
+                style={{
+                  width: width / 2,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: 'row'
+                }}
+              >
+
+                <Image
+                  source={require("../../../assets/bed.png")}
+                  style={{ width: 60, height: 60 }}
+                />
+                <View
+                  style={{ marginLeft: width / 36, alignItems: "flex-end" }}
+                >
+                  <Text style={{ color: "#f09291" }}>Beds</Text>
+                  <Text style={{ color: "#f09291" }}>03</Text>
+                </View>
+                {/* <Text style={{ color: "#f09291" }}></Text> */}
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate("flat")}
+                style={{
+                  width: width / 2,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: 'row'
+                }}
+              >
+
+                <Image
+                  source={require("../../../assets/duplex.png")}
+                  style={{ width: 60, height: 60 }}
+                />
+                <View
+                  style={{ marginLeft: width / 36, alignItems: "flex-end" }}
+                >
+                  <Text style={{ color: "#f09291" }}>Duplex</Text>
+                  {/* <Text style={{ color: "#f09291" }}>03</Text> */}
+                </View>
+                {/* <Text style={{ color: "#f09291" }}></Text> */}
+              </TouchableOpacity>
+            </View>
+            <View style={{ flex: 0.3, }}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate("flat")}
+                style={{
+                  width: width ,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: 'row'
+                }}
+              >
+
+                <Image
+                  source={require("../../../assets/studio.png")}
+                  style={{ width: 60, height: 60 }}
+                />
+                <View
+                  style={{ marginLeft: width / 36, alignItems: "flex-end" }}
+                >
+                  <Text style={{ color: "#f09291" }}>Studio</Text>
+                </View>
+                {/* <Text style={{ color: "#f09291" }}></Text> */}
               </TouchableOpacity>
             </View>
           </View>
-          <View style={{ flex: 0.1 ,backgroundColor: "#f16564"}} />
+          <View style={{ flex: 0.1, backgroundColor: "#f16564" }} />
         </View>
       </ScrollView>
     );

@@ -21,7 +21,7 @@ import validator from "validator";
 // import {signOut} from ''
 const drawerDataArray = [
   {
-    name: "Create Profile",
+    name: "Update Profile",
     icon: require("../../../assets/user.png"),
     route: ref => ref.props.navigation.navigate("userProfile")
   },

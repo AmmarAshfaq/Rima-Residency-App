@@ -47,7 +47,7 @@ export default class Detail extends Component {
       <Image
         source={require("../../../../assets/logoB.png")}
         resizeMode="contain"
-        style={{ width: width / 2, marginLeft: 8, marginRight: -6,height:height/16 }}
+        style={{ width: width / 2, marginLeft: 8, marginRight: -6, height: height / 16 }}
       />
     ),
     headerStyle: {

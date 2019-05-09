@@ -133,7 +133,7 @@ const RootStack = createStackNavigator(
     services:Services
   },
   {
-    initialRouteName: "contact"
+    initialRouteName: "properties"
   }
 );
 const prevGetStateForActionRootStack = RootStack.router.getStateForAction;
