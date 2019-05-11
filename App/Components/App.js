@@ -133,7 +133,7 @@ const RootStack = createStackNavigator(
     services:Services
   },
   {
-    initialRouteName: "properties"
+    initialRouteName: "splash"
   }
 );
 const prevGetStateForActionRootStack = RootStack.router.getStateForAction;
